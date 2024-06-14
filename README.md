@@ -1,1 +1,16 @@
+### Install packages
 
+```
+cd nix-config
+export NIX_CONFIG="experimental-features = nix-command flakes"
+cp -a /etc/nixos/* nixos
+sudo nixos-rebuild switch --flake .#nixos
+```
+
+### Run home manager
+
+```
+nix-channel --add https://github.com/nix-community/home-manager/archive/release-24.05.tar.gz home-manager
+nix-shell '<home-manager>' -A install
+home-manager switch --flake .#hao@nixos
+```
