@@ -70,6 +70,7 @@
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.hao = {
+    shell = pkgs.zsh;
     isNormalUser = true;
     description = "Hao";
     extraGroups = [ "networkmanager" "wheel" ];
@@ -91,6 +92,10 @@
   #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
   #  wget
   ];
+
+
+  # zsh
+  programs.zsh.enable = true;
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
