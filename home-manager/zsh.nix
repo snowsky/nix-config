@@ -9,6 +9,7 @@
   shellAliases = {
     da = "direnv allow";
     g = "git";
+    gs = "git status";
     c = "code";
     n = "nvim";
   };

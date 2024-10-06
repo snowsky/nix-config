@@ -87,6 +87,7 @@
     swaybg
     vscode
     rofi
+    # docker
   ];
 
   programs = {

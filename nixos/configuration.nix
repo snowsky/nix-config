@@ -73,7 +73,7 @@
     shell = pkgs.zsh;
     isNormalUser = true;
     description = "Hao";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "docker" "networkmanager" "wheel" ];
     packages = with pkgs; [
       kate
     #  thunderbird
@@ -96,6 +96,14 @@
 
   # zsh
   programs.zsh.enable = true;
+
+  # Docker
+  virtualisation.docker.enable = true;
+
+  # Fonts
+  fonts.packages = with pkgs; [
+    (nerdfonts.override { fonts = [ "FiraCode" "DroidSansMono" "Agave" ]; })
+  ];
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
