@@ -3,6 +3,7 @@
 ```
 cd nix-config
 export NIX_CONFIG="experimental-features = nix-command flakes"
+# compare configuration files, especially copy hardware
 cp -a /etc/nixos/* nixos
 sudo nixos-rebuild switch --flake .#nixos
 ```

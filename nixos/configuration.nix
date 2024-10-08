@@ -97,6 +97,12 @@
   # zsh
   programs.zsh.enable = true;
 
+  # Neovim
+  programs.neovim = {
+    enable = true;
+    defaultEditor = true;
+  };
+
   # Docker
   virtualisation.docker.enable = true;
 
