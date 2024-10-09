@@ -62,6 +62,7 @@
           ./nixos/lsp.nix
           ./nixos/hyprland.nix
           ./nixos/screen.nix
+          ./nixos/bluetooth.nix
         ];
       };
     };
