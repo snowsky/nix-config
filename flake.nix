@@ -8,6 +8,7 @@
     # at the same time. Here's an working example:
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     # Also see the 'unstable-packages' overlay at 'overlays/default.nix'.
+    wezterm.url = "github:wez/wezterm?dir=nix";
 
     # Home manager
     home-manager.url = "github:nix-community/home-manager/release-24.05";
@@ -60,6 +61,7 @@
           ./nixos/configuration.nix
           ./nixos/lsp.nix
           ./nixos/hyprland.nix
+          ./nixos/screen.nix
         ];
       };
     };
