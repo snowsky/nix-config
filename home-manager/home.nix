@@ -10,7 +10,7 @@
 }: {
   # You can import other home-manager modules here
   imports = [
-    ./sway.nix
+    # ./sway.nix
     # If you want to use modules your own flake exports (from modules/home-manager):
     # outputs.homeManagerModules.example
 
@@ -99,7 +99,7 @@
     dircolors = (import ./dircolors.nix { inherit pkgs; });
   };
 
-  home.file.".config/wezterm/wezterm.lua".source = ./config/wezterm/wezterm.lua;
+  # home.file.".config/wezterm/wezterm.lua".source = ./config/wezterm/wezterm.lua;
   home.file.".config/rofi/config.rasi".source = ./config/rofi/config.rasi;
   home.file.".config/waybar/config".source = ./config/waybar/config;
   home.file.".config/waybar/style.css".source = ./config/waybar/style.css;

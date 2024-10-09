@@ -158,6 +158,7 @@
   ];
   
   # Enable Services
+  services.ollama.enable = true;
   services.geoclue2.enable = true;
   programs.direnv.enable = true;
   services.upower.enable = true;
