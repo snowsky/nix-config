@@ -179,12 +179,6 @@
 
   environment.systemPackages = with pkgs; [
     kitty
-    pyprland
-    hyprpicker
-    hyprcursor
-    hyprlock
-    hypridle
-    hyprpaper
 
     at-spi2-atk
     qt6.qtwayland

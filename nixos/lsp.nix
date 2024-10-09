@@ -11,7 +11,6 @@
     nodePackages_latest.dockerfile-language-server-nodejs
     nodePackages_latest.bash-language-server
     nodePackages_latest.graphql-language-service-cli
-    vue-language-server
     sumneko-lua-language-server
     marksman
     markdown-oxide
@@ -26,5 +25,5 @@
     slint-lsp
     terraform-ls
     ansible-language-server
-  ]
+  ];
 }
