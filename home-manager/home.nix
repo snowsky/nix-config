@@ -93,7 +93,7 @@
   programs = {
     git = (import ./git.nix { inherit pkgs; });
     tmux = (import ./tmux.nix { inherit pkgs; });
-    zsh = (import ./zsh.nix { inherit pkgs; });
+    # zsh = (import ./zsh.nix { inherit pkgs; });
     starship = (import ./starship.nix { inherit pkgs; });
     direnv = (import ./direnv.nix { inherit pkgs; });
     dircolors = (import ./dircolors.nix { inherit pkgs; });

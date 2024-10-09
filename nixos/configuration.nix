@@ -72,15 +72,21 @@
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.hao = {
-    shell = pkgs.zsh;
+    # shell = pkgs.zsh;
+    shell = pkgs.fish;
     isNormalUser = true;
     description = "Hao";
     extraGroups = [ "docker" "networkmanager" "wheel" ];
     packages = with pkgs; [
       kate
+      youtube-music
+      vscodium
     #  thunderbird
     ];
   };
+
+  # Change runtime directory size
+  services.logind.extraConfig = "RuntimeDirectorySize=8G";
 
   # Install firefox.
   programs.firefox.enable = true;
@@ -88,21 +94,22 @@
   # Hyprland
   programs.hyprland.enable = true;
   programs.hyprland.xwayland.enable = true;
+  environment.sessionVariables.NIXOS_OZONE_WL = "1";
+  environment.sessionVariables.WLR_NO_HARDWARE_CURSORS = "1";
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
-  environment.systemPackages = with pkgs; [
-    kitty
+  # environment.systemPackages = with pkgs; [
   #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
   #  wget
-  ];
+  # ];
 
 
   # zsh
-  programs.zsh.enable = true;
+  # programs.zsh.enable = true;
 
   # Neovim
   programs.neovim = {
@@ -145,4 +152,116 @@
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "24.05"; # Did you read the comment?
 
+  # Systemd services setup
+  systemd.packages = with pkgs; [
+    auto-cpufreq
+  ];
+  
+  # Enable Services
+  services.geoclue2.enable = true;
+  programs.direnv.enable = true;
+  services.upower.enable = true;
+  programs.fish.enable = true;
+  programs.dconf.enable = true;
+  services.dbus.enable = true;
+  services.dbus.packages = with pkgs; [
+  	xfce.xfconf
+  	gnome2.GConf
+  ];
+  services.mpd.enable = true;
+  programs.thunar.enable = true;
+  programs.xfconf.enable = true;
+  services.tumbler.enable = true; 
+  services.fwupd.enable = true;
+  services.auto-cpufreq.enable = true;
+  # services.gnome.core-shell.enable = true;
+  # services.udev.packages = with pkgs; [ gnome.gnome-settings-daemon ];
+
+  environment.systemPackages = with pkgs; [
+    kitty
+    pyprland
+    hyprpicker
+    hyprcursor
+    hyprlock
+    hypridle
+    hyprpaper
+
+    at-spi2-atk
+    qt6.qtwayland
+    psi-notify
+    poweralertd
+    playerctl
+    psmisc
+    grim
+    slurp
+    imagemagick
+    swappy
+    ffmpeg_6-full
+    wl-screenrec
+    wl-clipboard
+    wl-clip-persist
+    cliphist
+    xdg-utils
+    wtype
+    wlrctl
+    waybar
+    rofi-wayland
+    dunst
+    avizo
+    wlogout
+    gifsicle
+
+    upx
+    git
+    lazygit
+    license-generator
+    git-ignore
+    gitleaks
+    git-secrets
+    pass-git-helper
+    just
+    xh
+    tgpt
+    # mcfly # terminal history
+    zellij
+    progress
+    noti
+    topgrade
+    ripgrep
+    rewrk
+    wrk2
+    procs
+    tealdeer
+    # skim #fzf better alternative in rust
+    monolith
+    aria
+    # macchina #neofetch alternative in rust
+    sd
+    ouch
+    duf
+    du-dust
+    fd
+    jq
+    gh
+    trash-cli
+    zoxide
+    tokei
+    fzf
+    bat
+    mdcat
+    pandoc
+    lsd
+    lsof
+    gping
+    viu
+    tre-command
+    felix-fm
+    chafa
+
+    cmatrix
+    pipes-rs
+    rsclock
+    cava
+    figlet
+  ];
 }
