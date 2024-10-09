@@ -179,6 +179,7 @@
   # services.udev.packages = with pkgs; [ gnome.gnome-settings-daemon ];
 
   environment.systemPackages = with pkgs; [
+    slack
     kitty
 
     at-spi2-atk
